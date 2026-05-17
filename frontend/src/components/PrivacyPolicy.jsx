@@ -1,6 +1,8 @@
 function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 p-8 pt-20">
+    <>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8117267154125066" crossorigin="anonymous"></script>
+      <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 p-8 pt-20">
       <div className="max-w-4xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 text-white">
         <h1 className="text-4xl font-bold text-pink-400 mb-6">Privacy Policy</h1>
         <p className="text-white/70 mb-4">Last updated: May 2026</p>
@@ -69,6 +71,7 @@ function PrivacyPolicy() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 
