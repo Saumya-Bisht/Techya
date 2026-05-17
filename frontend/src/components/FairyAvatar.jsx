@@ -9,28 +9,7 @@ function FairyAvatar({ isListening, isSpeaking, isLoading }) {
     const directions = ['flyInFromTop', 'flyInFromBottom', 'flyInFromLeft', 'flyInFromRight']
     const randomDir = directions[Math.floor(Math.random() * 4)]
 
-    let hasPlayedEntry = false
-    const playEntrySound = () => {
-      if (hasPlayedEntry) return
-      hasPlayedEntry = true
-      
-      try {
-        const audio = new Audio('/entry.mp3')
-        audio.volume = 0.8
-        audio.currentTime = 15
-        audio.play().then(() => console.log('Playing entry music')).catch(e => console.log('Play failed:', e))
-        
-        setTimeout(() => {
-          audio.pause()
-          audio.currentTime = 0
-        }, 5500)
-      } catch (e) {
-        console.log('Audio error:', e)
-      }
-    }
 
-    document.addEventListener('click', playEntrySound, { once: true })
-    document.addEventListener('keydown', playEntrySound, { once: true })
 
     const style = document.createElement('style')
     style.id = 'fairy-animations'
@@ -128,7 +107,7 @@ function FairyAvatar({ isListening, isSpeaking, isLoading }) {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div id="fairy-container" className="relative" style={containerStyle}>
+      <div id="fairy-container" className="relative pointer-events-none" style={containerStyle}>
         <div className={`relative w-96 h-96 rounded-full ${isListening ? 'voice-pulse' : ''} ${isSpeaking ? 'animate-bounce' : ''}`}>
           <div className={`absolute inset-0 rounded-full fairy-glow ${isSpeaking ? 'animate-pulse' : ''}`}>
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-400  to-black-500 opacity-90"></div>
@@ -140,6 +119,15 @@ function FairyAvatar({ isListening, isSpeaking, isLoading }) {
   src={fairyGif}
   alt="Fairy"
   className="w-[30rem] h-[30rem] object-contain -mt-8"
+  style={{ cursor: 'pointer', pointerEvents: 'auto' }}
+  onClick={(e) => {
+    e.stopPropagation()
+    const audio = new Audio('/entry.mp3')
+    audio.volume = 0.6
+    audio.currentTime = 15
+    audio.play().catch(e => {})
+    setTimeout(() => { audio.pause(); audio.currentTime = 0 }, 5500)
+  }}
 />
             </div>
 

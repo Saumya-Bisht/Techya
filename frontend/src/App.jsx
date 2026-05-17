@@ -253,13 +253,7 @@ function App() {
           <p className="text-white/60 text-sm mt-1">Your Magical Fairy Companion</p>
         </div>
         <div className="flex-1 flex items-center justify-center overflow-visible">
-          <div className="overflow-visible cursor-pointer" style={{ transform: 'scale(1.0)', marginBottom: '-40px' }} onClick={() => {
-            const audio = new Audio('/entry.mp3')
-            audio.volume = 0.6
-            audio.currentTime = 15
-            audio.play().catch(e => {})
-            setTimeout(() => { audio.pause(); audio.currentTime = 0 }, 5500)
-          }}>
+          <div className="overflow-visible" style={{ transform: 'scale(1.0)', marginBottom: '-40px' }}>
             <FairyAvatar
               isListening={isListening}
               isSpeaking={isSpeaking}
