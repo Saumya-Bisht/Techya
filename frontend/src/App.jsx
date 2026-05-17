@@ -309,6 +309,21 @@ function App() {
         )}
       </button>
 
+      <div className="fixed bottom-2 left-0 right-0 text-center text-white/40 text-xs " style={{zIndex: 1000}}>
+        <span className="mx-2 cursor-pointer" >
+          <a href="/privacy" className="hover:text-pink-400 transition-colors">Privacy Policy</a>
+        </span>
+        <span className="mx-2">|</span>
+        <span className="mx-2 cursor-pointer">
+          <a href="/terms" className="hover:text-pink-400 transition-colors">Terms & Conditions</a>
+        </span>
+        <span className="mx-2">|</span>
+        <span className="mx-2 cursor-pointer">
+         <a href="https://www.linkedin.com/in/saumya-bisht" target="_blank" className="hover:text-pink-400 transition-colors">
+         © 2026 TECHYA by Saumya Bisht</a>
+        </span>
+      </div>
+
       <style>{`
         @keyframes twinkle {
           0%, 100% { opacity: 0.3; }
