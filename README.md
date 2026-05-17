@@ -105,4 +105,5 @@ fly deploy
 - [ ] Convert to React Native for mobile
 - [ ] Add more fairy characters
 - [ ] Voice customization
-- [ ] Remember conversation context
+- [ ] Remember conversation context# Techya
+Your Tech Fairy Companion
