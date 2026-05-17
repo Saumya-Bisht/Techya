@@ -12,10 +12,11 @@ app = FastAPI(title="Fairy AI API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origin_regex=".*",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["Content-Length", "Content-Type"],
 )
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
