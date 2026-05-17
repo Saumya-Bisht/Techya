@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+}
+
+.fairy-glow {
+  box-shadow: 0 0 30px rgba(255, 158, 205, 0.5),
+              0 0 60px rgba(155, 93, 229, 0.3),
+              0 0 100px rgba(0, 187, 249, 0.2);
+}
+
+.message-bubble {
+  position: relative;
+  max-width: 80%;
+  padding: 12px 18px;
+  border-radius: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+@keyframes wingFlapLeft {
+  0%,
+  100% {
+    transform: rotate(-12deg);
+  }
+  50% {
+    transform: rotate(-28deg);
+  }
+}
+
+@keyframes wingFlapRight {
+  0%,
+  100% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(28deg);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes fairyLanding {
+  0% {
+    transform: translateY(-400px) rotate(0deg) scale(0.6);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(30px) rotate(300deg) scale(1.05);
+    opacity: 1;
+  }
+
+  80% {
+    transform: translateY(-10px) rotate(350deg) scale(0.98);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes floatAnim {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+.user-message {
+  background: linear-gradient(135deg, #00bbf9 0%, #00f5d4 100%);
+  color: #1a1a2e;
+  margin-left: auto;
+  border-bottom-right-radius: 5px;
+}
+
+.ai-message {
+  background: linear-gradient(135deg, rgba(255, 158, 205, 0.3) 0%, rgba(155, 93, 229, 0.3) 100%);
+  color: white;
+  border: 1px solid rgba(255, 158, 205, 0.3);
+  border-bottom-left-radius: 5px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes flyInFromTop {
+  0% { transform: translate(-50%, -200%) scale(0.3); opacity: 0; }
+  60% { transform: translate(-50%, 10%) scale(1.1); opacity: 1; }
+  80% { transform: translate(-50%, -5%) scale(0.95); }
+  100% { transform: translate(-50%, 0) scale(1); }
+}
+
+@keyframes flyInFromBottom {
+  0% { transform: translate(-50%, 200%) scale(0.3); opacity: 0; }
+  60% { transform: translate(-50%, -10%) scale(1.1); opacity: 1; }
+  80% { transform: translate(-50%, 5%) scale(0.95); }
+  100% { transform: translate(-50%, 0) scale(1); }
+}
+
+@keyframes flyInFromLeft {
+  0% { transform: translate(-200%, -50%) scale(0.3); opacity: 0; }
+  60% { transform: translate(10%, -50%) scale(1.1); opacity: 1; }
+  80% { transform: translate(-5%, -50%) scale(0.95); }
+  100% { transform: translate(0, -50%); }
+}
+
+@keyframes flyInFromRight {
+  0% { transform: translate(200%, -50%) scale(0.3); opacity: 0; }
+  60% { transform: translate(-10%, -50%) scale(1.1); opacity: 1; }
+  80% { transform: translate(5%, -50%) scale(0.95); }
+  100% { transform: translate(0, -50%); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes wingFlapLeft {
+  0%, 100% { transform: rotate(-20deg) scaleY(1); }
+  50% { transform: rotate(-5deg) scaleY(0.9); }
+}
+
+@keyframes wingFlapRight {
+  0%, 100% { transform: rotate(20deg) scaleY(1); }
+  50% { transform: rotate(5deg) scaleY(0.9); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.voice-pulse {
+  animation: voice-pulse 1s ease-in-out infinite;
+}
+
+@keyframes voice-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 158, 205, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(255, 158, 205, 0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 158, 205, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 158, 205, 0.7);
+}
