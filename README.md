@@ -88,13 +88,8 @@ fly deploy
 **Groq Free:**
 - 500 requests/day
 - 500k tokens/day
-- Plenty for personal use!
 
 ## Troubleshooting
-
-### API key not working?
-- Make sure you added it in the .env file
-- Check https://console.groq.com/usage for your key
 
 ### Voice not working?
 - Use Chrome browser
